@@ -37,12 +37,21 @@ public class ControllerServlet extends HttpServlet {
         if (userPath.equals("/category")) {
             String categoryId = request.getQueryString();
             //System.out.println(userPath);
+            if(categoryId.equals("Sale")){
+                List<SanPham> categoryProducts;
+                categoryProducts = (List<SanPham>) ProductSB.findRange(new int[]{0,9});
+                session.setAttribute("categoryProducts", categoryProducts);
+                request.setAttribute("title", categoryId);
+            }
+            else
             if (categoryId != null) {
                 List<SanPham> categoryProducts;
                 categoryProducts = (List<SanPham>) ProductSB.FindByCategory(categoryId);
                 session.setAttribute("categoryProducts", categoryProducts);
                 request.setAttribute("title", categoryId);
             }
+            
+            
         }
 
         if (userPath.equals("/product")) {
@@ -68,6 +77,7 @@ public class ControllerServlet extends HttpServlet {
             // if user is adding item to cart for first time
             // create cart object and attach it to user session
             ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+            
 
             if (cart == null) {
                 cart = new ShoppingCart();
@@ -78,6 +88,28 @@ public class ControllerServlet extends HttpServlet {
             if (!productId.isEmpty()) {
                 SanPham product = ProductSB.find(productId);
                 cart.addItem(product);
+                request.setAttribute("title",product.getLoai());
+            }
+            String userView = (String) session.getAttribute("view");
+            
+            userPath = userView;
+        }
+        
+        if (userPath.equals("/update")) {
+            // if user is adding item to cart for first time
+            // create cart object and attach it to user session
+            request.setAttribute("title", "View Cart");
+            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+
+            if (cart == null) {
+                cart = new ShoppingCart();
+                session.setAttribute("cart", cart);
+            }
+            // get user input from request
+            String productId = request.getQueryString();
+            if (!productId.isEmpty()) {
+                SanPham product = ProductSB.find(productId);
+                cart.update(product, "0");
             }
             String userView = (String) session.getAttribute("view");
             userPath = userView;

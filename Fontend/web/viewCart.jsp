@@ -8,7 +8,7 @@
 <%@page import="cart.ShoppingCart"%>
 <%@page import="cart.ShoppingCartItem"%>
 
-<%
+<%    
     session.setAttribute("view", "/viewCart");
 %>
 
@@ -27,9 +27,9 @@
                             <th> Subtotal</th>
                         </tr>
                     <%
-                        if(cart != null){
-                        List<ShoppingCartItem> items = cart.getItems();
-                        for (ShoppingCartItem item : items) {
+                        if (cart != null) {
+                            List<ShoppingCartItem> items = cart.getItems();
+                            for (ShoppingCartItem item : items) {
                     %>
                     <tr class="cart-header">
 
@@ -42,19 +42,26 @@
                             <div class="clearfix"> </div>
                         </td>
                         <td>$<%= item.getProduct().getGiaTien()%></td>
-                        <td><%= item.getQuantity() %></td>
-                        <td class="item_price">$<%= item.getTotal() %></td>
-                        <td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
+                        <td><%= item.getQuantity()%></td>
+                        <td class="item_price">$<%= item.getTotal()%></td>
+                        <td class="add-check"><a class="item_add hvr-skew-backward" href="update?<%= item.getProduct().getIdsp()%>">Delete</a></td>
                     </tr>
                     <%
-                        }}
+                            }
+                        }
                     %>
                 </table>
             </div>
         </div>
+        <% 
+            if (cart.getNumberOfItems() != 0) {
+        %>
         <div class="produced">
-            <a href="single.html" class="hvr-skew-backward">Produced To Buy</a>
+            <a href="<c:url value='viewCart?clear=true'/>" class="hvr-skew-backward">Produced To Buy</a>
         </div>
+        <%
+            }
+        %>
     </div>
 </div>
 

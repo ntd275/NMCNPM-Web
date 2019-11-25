@@ -15,7 +15,7 @@
         <url-pattern>/product</url-pattern>
         <url-pattern>/addToCart</url-pattern>
         <url-pattern>/viewCart</url-pattern>
-        
+        <url-pattern>/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

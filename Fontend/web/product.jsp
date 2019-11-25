@@ -39,12 +39,7 @@
                         </div>
                         <h4 class="quick">Quick Overview:</h4>
                         <p class="quick_desc"><%=p.getMoTa()%></p>
-                        <div class="wish-list">
-                            <ul>
-                                <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-                                <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
-                            </ul>
-                        </div>
+                   
                         <div class="quantity"> 
                             <div class="quantity-select">                           
                                 <div class="entry value-minus">&nbsp;</div>

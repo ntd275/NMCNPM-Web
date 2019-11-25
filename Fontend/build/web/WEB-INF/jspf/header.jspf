@@ -74,7 +74,7 @@
                         <ul >
                             <li><a href="login.jsp">Login</a></li>
                             <li><a href="register.jsp">Register</a></li>
-                            <li><a href="checkout.jsp">Checkout</a></li>
+                            <li><a href="<c:url value='viewCart'/>">Checkout</a></li>
                         </ul>
                     </div>
 
@@ -116,7 +116,7 @@
                                     <li><a class="color2" href="<c:url value='category?Top'/>">Top</a></li>
                                     <li><a class="color3" href="<c:url value='category?Bottom'/>">Bottom</a></li>                        
                                     <li><a class="color4" href="<c:url value='category?Shoes'/>">Shoes</a></li>
-                                    <li><a class="color5" href="product.jsp">Sale</a></li>
+                                    <li><a class="color5" href="<c:url value='category?Sale'/>">Sale</a></li>
                                     <li><a class="color6" href="contact.jsp">Contact</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->
