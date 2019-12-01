@@ -31,7 +31,7 @@
     </script>
     <div class="check-out">
         <div class="container">
-              C?m ?n b?n ?ã mua hàng
+              Thank you!
         </div>
     </div>
 
