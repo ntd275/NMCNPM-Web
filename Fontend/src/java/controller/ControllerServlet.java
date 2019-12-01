@@ -69,6 +69,10 @@ public class ControllerServlet extends HttpServlet {
             request.setAttribute("title", "View Cart");
             if ((clear != null) && clear.equals("true")) {
                 ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+                if (cart == null) {
+                cart = new ShoppingCart();
+                session.setAttribute("cart", cart);
+            }
                 cart.clear();
             }
         }

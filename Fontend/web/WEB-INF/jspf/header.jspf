@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+        <title>Shop Online</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- Custom Theme files -->
         <!--theme-style-->
@@ -123,12 +123,9 @@
 
                         </nav>
                     </div>
-                    <div class="col-sm-2 search-right">
-                        <ul class="heart">
+                    <div class="col-sm-2 search-right" >
+                        <ul class="heart"  style="margin-left: 30%">
                             <li>
-                                <a href="wishlist.jsp" >
-                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                                </a></li>
                             <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
                         </ul>
                         <div class="cart box_1">
